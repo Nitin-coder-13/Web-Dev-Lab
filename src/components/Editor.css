@@ -1,0 +1,206 @@
+.editor-panel {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--rad);
+  padding: 1.4rem;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editor-blank {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.blank-icon {
+  font-size: 36px;
+  opacity: 0.3;
+}
+
+.blank-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink3);
+}
+
+/* Tag Pills */
+.editor-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  background: var(--surface2);
+  border: 0.5px solid var(--border);
+  color: var(--ink3);
+  padding: 3px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.tag:hover {
+  border-color: var(--border2);
+  color: var(--ink2);
+}
+
+.tag.active {
+  background: var(--amber-bg);
+  color: var(--amber);
+  border-color: transparent;
+}
+
+/* Title */
+.editor-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid var(--border);
+  padding: 6px 0;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.editor-title:focus {
+  border-color: var(--border2);
+}
+
+.editor-title::placeholder {
+  color: var(--ink3);
+  font-style: italic;
+}
+
+/* Body */
+.editor-body {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  flex: 1;
+  min-height: 280px;
+  line-height: 1.8;
+  padding: 4px 0;
+}
+
+.editor-body::placeholder {
+  color: var(--ink3);
+}
+
+/* Actions Row */
+.editor-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.5px solid var(--border);
+  padding-top: 12px;
+  margin-top: auto;
+  gap: 8px;
+}
+
+.editor-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink3);
+  flex: 1;
+  text-align: center;
+}
+
+/* Buttons */
+.btn-save {
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: var(--rad-sm);
+  padding: 8px 16px;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.btn-save:hover {
+  opacity: 0.88;
+}
+
+.btn-save:active {
+  transform: scale(0.97);
+}
+
+.btn-delete {
+  font-size: 12px;
+  background: transparent;
+  color: var(--danger);
+  border: 0.5px solid var(--danger);
+  border-radius: var(--rad-sm);
+  padding: 8px 14px;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-delete:hover {
+  background: var(--danger-bg);
+}
+
+.btn-delete:active {
+  transform: scale(0.97);
+}
+
+/* Confirm Row */
+.confirm-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.confirm-label {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--ink2);
+  font-style: italic;
+  flex: 1;
+}
+
+.btn-confirm-delete {
+  font-size: 12px;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: var(--rad-sm);
+  padding: 8px 14px;
+  transition: opacity 0.15s;
+}
+
+.btn-confirm-delete:hover {
+  opacity: 0.88;
+}
+
+.btn-cancel {
+  font-size: 12px;
+  background: var(--surface2);
+  color: var(--ink2);
+  border: 0.5px solid var(--border);
+  border-radius: var(--rad-sm);
+  padding: 8px 14px;
+  transition: background 0.15s;
+}
+
+.btn-cancel:hover {
+  background: var(--surface);
+  border-color: var(--border2);
+}

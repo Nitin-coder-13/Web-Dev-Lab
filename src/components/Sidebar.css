@@ -1,0 +1,62 @@
+.sidebar {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--rad);
+  overflow: hidden;
+}
+
+.sidebar-empty {
+  padding: 28px 16px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink3);
+}
+
+.note-item {
+  padding: 13px 15px;
+  border-bottom: 0.5px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.note-item:last-child {
+  border-bottom: none;
+}
+
+.note-item:hover {
+  background: var(--surface2);
+}
+
+.note-item.active {
+  background: var(--amber-bg);
+}
+
+.note-item-title {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.note-item-preview {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--ink3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.note-item-date {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink3);
+}

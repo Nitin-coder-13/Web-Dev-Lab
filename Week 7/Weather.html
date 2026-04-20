@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weather App</title>
+<style>
+body {
+ margin: 0;
+ font-family: 'Segoe UI';
+ background: linear-gradient(135deg, #00c6ff, #0072ff);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+}
+.container {
+ background: rgba(255,255,255,0.15);
+ backdrop-filter: blur(10px);
+ padding: 35px;
+ border-radius: 20px;
+ text-align: center;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+ width: 320px;
+ color: white;
+}
+h2 {
+ margin-bottom: 20px;
+}
+input {
+ width: 80%;
+ padding: 12px;
+ border-radius: 10px;
+ border: none;
+ outline: none;
+ margin-bottom: 10px;
+}
+button {
+ padding: 12px 20px;
+ border: none;
+ border-radius: 10px;
+ background: white;
+ color: #0072ff;
+ font-weight: bold;
+ cursor: pointer;
+ transition: 0.3s;
+}
+button:hover {
+ background: #ffcc00;
+ transform: scale(1.05);
+}
+#result {
+ margin-top: 20px;
+ padding: 15px;
+ border-radius: 10px;
+ background: rgba(0,0,0,0.3);
+ transition: 0.3s;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Weather App ⛅</h2>
+<input type="text" id="city" placeholder="Enter city name">
+<br>
+<button onclick="getWeather()">Check Weather</button>
+<div id="result"></div>
+</div>
+<script>
+async function getWeather() {
+ let city = document.getElementById("city").value;
+ if(city === "") {
+   document.getElementById("result").innerHTML = "Please enter a city!";
+   return;
+ }
+ let url = "https://wttr.in/" + city + "?format=j1";
+ let res = await fetch(url);
+ let data = await res.json();
+ let temp = data.current_condition[0].temp_C;
+ let desc = data.current_condition[0].weatherDesc[0].value;
+ document.getElementById("result").innerHTML =
+   "<h3>" + city + "</h3>" +
+   "<p>🌡 Temperature: " + temp + "°C</p>" +
+   "<p>☁ Condition: " + desc + "</p>";
+}
+</script>
+</body>
+</html>
