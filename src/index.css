@@ -1,0 +1,56 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #1a1a18;
+  --ink2: #5a5a56;
+  --ink3: #9a9a94;
+  --surface: #ffffff;
+  --surface2: #f5f4f0;
+  --border: rgba(0, 0, 0, 0.1);
+  --border2: rgba(0, 0, 0, 0.22);
+  --accent: #3b6d11;
+  --accent-light: #eaf3de;
+  --accent-text: #c8e6a0;
+  --danger: #a32d2d;
+  --danger-bg: #fcebeb;
+  --amber: #854f0b;
+  --amber-bg: #faeeda;
+  --rad: 12px;
+  --rad-sm: 8px;
+  --font-serif: 'Lora', Georgia, serif;
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e8e2;
+    --ink2: #a0a09a;
+    --ink3: #606058;
+    --surface: #1e1e1a;
+    --surface2: #282822;
+    --border: rgba(255, 255, 255, 0.08);
+    --border2: rgba(255, 255, 255, 0.16);
+  }
+}
+
+body {
+  font-family: var(--font-serif);
+  background: var(--surface2);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+input, textarea {
+  font-family: var(--font-serif);
+  color: var(--ink);
+}
